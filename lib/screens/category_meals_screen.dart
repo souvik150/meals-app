@@ -4,10 +4,6 @@ import '../dummy_data.dart';
 
 class CategoriesMealsScreen extends StatelessWidget {
   static const routeName = '/categories-meals';
-  // final String categoryId;
-  // final String categoryTitle;
-  //
-  // CategoriesMealsScreen(this.categoryId, this.categoryTitle);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +16,7 @@ class CategoriesMealsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(categoryTitle)),
       body: ListView.builder(itemBuilder: (ctx, index){
-        return MealItem(title: categoryMeals[index].title, imageUrl: categoryMeals[index].imageUrl, affordability: categoryMeals[index].affordability, duration: categoryMeals[index].duration, complexity: categoryMeals[index].complexity);
+        return MealItem(id:categoryMeals[index].id ,title: categoryMeals[index].title, imageUrl: categoryMeals[index].imageUrl, affordability: categoryMeals[index].affordability, duration: categoryMeals[index].duration, complexity: categoryMeals[index].complexity);
       }, itemCount: categoryMeals.length)
     );
   }
